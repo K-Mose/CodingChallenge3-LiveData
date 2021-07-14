@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewModelFactory = MainActivityViewModelFactory(0)
         viewModel = ViewModelProvider(this, viewModelFactory ).get(MainActivityViewModel::class.java)
+        binding.viewModel = viewModel
         viewModel.countData.observe(this, {
             binding.tvCount.text = it.toString()
         })
