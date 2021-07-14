@@ -24,14 +24,5 @@ class MainActivity : AppCompatActivity() {
          */
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        viewModel.countData.observe(this, {
-            binding.tvCount.text = it.toString()
-        })
-        binding.apply {
-            btnAdd.setOnClickListener {
-                viewModel.addCount(1)
-            }
-        }
-
     }
 }
